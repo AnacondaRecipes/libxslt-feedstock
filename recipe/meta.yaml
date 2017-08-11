@@ -21,17 +21,21 @@ build:
     - vc14  # [win and py>=35]
 
 requirements:
+  host:
+    - libxml2 2.9.*
+    - icu 58.*  # [not win]
+
   build:
     - python  # [win]
     - vc 9  # [win and py27]
     - vc 10  # [win and py34]
     - vc 14  # [win and py>=35]
-    - libxml2 2.9.*
     # These three can be removed when the patch is dropped.
     - automake  # [not win]
     - libtool  # [not win]
-    - pkgconfig  # [not win]
-    - icu 58.*  # [not win]
+    - pkg-config  # [not win]
+    - {{ compiler('c') }}
+
   run:
     - vc 9  # [win and py27]
     - vc 10  # [win and py34]
