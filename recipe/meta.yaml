@@ -21,11 +21,8 @@ build:
     - vc14  # [win and py>=35]
 
 requirements:
-  host:
-    - libxml2 2.9.*
-    - icu 58.*  # [not win]
-
   build:
+    - {{ compiler('c') }}
     - python  # [win]
     - vc 9  # [win and py27]
     - vc 10  # [win and py34]
@@ -34,14 +31,15 @@ requirements:
     - automake  # [not win]
     - libtool  # [not win]
     - pkg-config  # [not win]
-    - {{ compiler('c') }}
+
+  host:
+    - icu       # [not win]
+    - libxml2
 
   run:
     - vc 9  # [win and py27]
     - vc 10  # [win and py34]
     - vc 14   # [win and py35]
-    - libxml2 2.9.*
-    - icu 58.*  # [not win]
 
 test:
   commands:
