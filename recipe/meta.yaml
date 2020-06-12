@@ -1,4 +1,4 @@
-{% set version = "1.1.33" %}
+{% set version = "1.1.34" %}
 
 package:
   name: libxslt
@@ -7,7 +7,9 @@ package:
 source:
   fn: libxslt-{{ version }}.tar.gz
   url: http://xmlsoft.org/sources/libxslt-{{ version }}.tar.gz
-  sha256: 8e36605144409df979cab43d835002f63988f3dc94d5d3537c12796db90e38c8
+  sha256: 98b1bd46d6792925ad2dfe9a87452ea2adebf69dcb9919ffd55bf926a7f93f7f
+  patches:
+    - 0002-win-profiler-config.patch
 
 build:
   number: 0
@@ -18,15 +20,12 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    # These three can be removed when the patch is dropped.
-    - automake  # [not win]
-    - libtool  # [not win]
-    - pkg-config  # [not win]
     - make        # [not win]
+    - m2-patch    # [win]
 
   host:
-    - icu       # [not win]
-    - libxml2
+    - icu         # [not win]
+    - libxml2 >=2.9.10
 
 test:
   commands:
@@ -51,3 +50,4 @@ about:
 extra:
   recipe-maintainers:
     - ocefpaf
+    - chenghlee
