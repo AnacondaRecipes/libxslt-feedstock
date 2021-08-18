@@ -22,7 +22,8 @@ requirements:
     - {{ compiler('c') }}
     - make        # [not win]
     - m2-patch    # [win]
-
+    - patch       # [not win]
+    - libtool     # [not win]
   host:
     - icu         # [not win]
     - libxml2 >=2.9.10
