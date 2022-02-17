@@ -1,4 +1,4 @@
-{% set version = "1.1.34" %}
+{% set version = "1.1.35" %}
 
 package:
   name: libxslt
@@ -7,7 +7,7 @@ package:
 source:
   fn: libxslt-{{ version }}.tar.gz
   url: http://xmlsoft.org/sources/libxslt-{{ version }}.tar.gz
-  sha256: 98b1bd46d6792925ad2dfe9a87452ea2adebf69dcb9919ffd55bf926a7f93f7f
+  sha256: 2a9981b6e6ac946602e1054c448799f9a836a88d762500f69422fc879fd05342
   patches:
     - 0002-win-profiler-config.patch
 
