@@ -25,7 +25,7 @@ requirements:
     - patch       # [not win]
     - libtool     # [not win]
   host:
-    - icu         # [not win]
+    - icu         # [linux]
     - libxml2 >=2.9.10
 
 test:
