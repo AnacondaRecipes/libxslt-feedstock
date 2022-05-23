@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Get an updated config.sub and config.guess
-cp -r ${BUILD_PREFIX}/share/libtool/build-aux/config.* .
+cp $BUILD_PREFIX/share/gnuconfig/config.* .
 
 # Avoid overlinking. zlib and liblzma are private to libxml2
 find "${PREFIX}/lib" -name "*.la" -delete -print
