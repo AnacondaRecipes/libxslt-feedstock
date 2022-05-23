@@ -25,7 +25,6 @@ requirements:
     - patch       # [not win]
     - libtool     # [not win]
   host:
-    - icu         # [linux]
     - libxml2 >=2.9.10
 
 test:
@@ -37,6 +36,7 @@ test:
 about:
   home: https://gitlab.gnome.org/GNOME/libxslt
   license: MIT
+  licence_family: MIT
   license_file: COPYING
   summary: The XSLT C library developed for the GNOME project
   description: |
