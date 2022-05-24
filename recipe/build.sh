@@ -14,7 +14,7 @@ fi
 
 ./configure --prefix=$PREFIX \
             --with-libxml-prefix=$PREFIX \
-            --with-python=$PREFIX
+            --without-python
 
 make -j${CPU_COUNT} ${VERBOSE_AT}
 make check
