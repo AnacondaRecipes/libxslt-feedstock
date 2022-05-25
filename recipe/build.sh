@@ -7,14 +7,10 @@ cp $BUILD_PREFIX/share/gnuconfig/config.* .
 find "${PREFIX}/lib" -name "*.la" -delete -print
 sed -i.bak -e 's/-llzma //g' -e 's/-lz //g' $PREFIX/bin/xml2-config
 
-# It looks like an missing symbol of libxml on osx-arm64
-if [[ ${target_platform} =~ .*arm64.* ]]; then
-    LDFLAGS="${LDFLAGS} -lxml2"
-fi
-
 ./configure --prefix=$PREFIX \
             --with-libxml-prefix=$PREFIX \
-            --without-python
+            --with-libxml-include-prefix=$PREFIX/include/libxml2/ \
+            --with-libxml-libs-prefix=$PREFIX/lib/ 
 
 make -j${CPU_COUNT} ${VERBOSE_AT}
 make check
