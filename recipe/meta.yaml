@@ -27,7 +27,6 @@ requirements:
     - patch       # [not win]
     - gnuconfig   # [not win]
   host:
-    - icu         # [not win]
     - libxml2 >=2.9.10
 
 test:
