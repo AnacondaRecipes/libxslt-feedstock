@@ -9,8 +9,7 @@ sed -i.bak -e 's/-llzma //g' -e 's/-lz //g' $PREFIX/bin/xml2-config
 
 ./configure --prefix=$PREFIX \
             --with-libxml-prefix=$PREFIX \
-            --with-libxml-include-prefix=$PREFIX/include/libxml2/ \
-            --with-libxml-libs-prefix=$PREFIX/lib/ 
+            --without-python 
 
 make -j${CPU_COUNT} ${VERBOSE_AT}
 make check
