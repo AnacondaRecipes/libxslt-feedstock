@@ -26,6 +26,7 @@ requirements:
     - m2-patch    # [win]
     - patch       # [not win]
     - gnuconfig   # [not win]
+    - libxml2     # [osx and arm64]
   host:
     - icu  # [not win]
     - libxml2 >=2.9.10
