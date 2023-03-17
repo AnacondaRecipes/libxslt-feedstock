@@ -28,7 +28,7 @@ requirements:
     - pkg-config
   host:
     - icu  # [not win]
-    - libxml2 2.10
+    - libxml2 {{ libxml2 }}
 
 test:
   requires:
