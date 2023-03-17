@@ -1,4 +1,4 @@
-{% set version = "1.1.35" %}
+{% set version = "1.1.37" %}
 
 package:
   name: libxslt
@@ -7,7 +7,7 @@ package:
 source:
   fn: libxslt-{{ version }}.tar.xz
   url: https://download.gnome.org/sources/libxslt/{{ version[0:3] }}/libxslt-{{ version }}.tar.xz
-  sha256: 8247f33e9a872c6ac859aa45018bc4c4d00b97e2feac9eebc10c93ce1f34dd79
+  sha256: 3a4b27dc8027ccd6146725950336f1ec520928f320f144eb5fa7990ae6123ab4
   patches:
     - 0002-win-profiler-config.patch
 
