@@ -23,7 +23,6 @@ requirements:
     - {{ compiler('c') }}
     - make        # [not win]
     - m2-patch    # [win]
-    - patch       # [not win]
     - gnuconfig   # [not win]
     - pkg-config
   host:
@@ -41,7 +40,7 @@ test:
 about:
   home: https://gitlab.gnome.org/GNOME/libxslt
   license: MIT
-  licence_family: MIT
+  license_family: MIT
   license_file: COPYING
   summary: The XSLT C library developed for the GNOME project
   description: |
@@ -52,7 +51,6 @@ about:
     and some of Saxon's evaluate and expressions extensions."
   doc_url: https://gitlab.gnome.org/GNOME/libxslt/-/wikis
   dev_url: https://gitlab.gnome.org/GNOME/libxslt
-  doc_source_url: https://github.com/GNOME/libxslt/tree/master/doc
 
 extra:
   recipe-maintainers:
