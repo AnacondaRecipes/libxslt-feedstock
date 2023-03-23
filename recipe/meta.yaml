@@ -1,4 +1,4 @@
-{% set version = "1.1.35" %}
+{% set version = "1.1.37" %}
 
 package:
   name: libxslt
@@ -7,42 +7,41 @@ package:
 source:
   fn: libxslt-{{ version }}.tar.xz
   url: https://download.gnome.org/sources/libxslt/{{ version[0:3] }}/libxslt-{{ version }}.tar.xz
-  sha256: 8247f33e9a872c6ac859aa45018bc4c4d00b97e2feac9eebc10c93ce1f34dd79
-  patches:
-    - 0002-win-profiler-config.patch
+  sha256: 3a4b27dc8027ccd6146725950336f1ec520928f320f144eb5fa7990ae6123ab4
+  patches:  # [win]
+    - 0001-Make-and-install-a-pkg-config-file-on-Windows.patch  # [win]
+    - 0002-win-profiler-config.patch  # [win]
 
 build:
   number: 0
   run_exports:
     # forward compatible: https://abi-laboratory.pro/tracker/timeline/libxslt/
     - {{ pin_subpackage('libxslt') }}
-  ignore_run_exports:
-    - icu  # [osx]
 
 requirements:
   build:
     - {{ compiler('c') }}
     - make        # [not win]
     - m2-patch    # [win]
-    - patch       # [not win]
     - gnuconfig   # [not win]
+    - pkg-config
   host:
     - icu  # [not win]
-    - libxml2 >=2.9.10
+    - libxml2 2.10
 
 test:
   requires:
-    - conda-build  # [osx]
+    - pkg-config
   commands:
     - xsltproc --version
-    - conda inspect linkages -p $PREFIX libxslt  # [not win]
-    - conda inspect objects -p $PREFIX libxslt  # [osx]
+    - pkg-config --cflags libxslt libexslt
+    - pkg-config --libs libxslt libexslt
 
 about:
   home: https://gitlab.gnome.org/GNOME/libxslt
   license: MIT
-  licence_family: MIT
-  license_file: COPYING
+  license_family: MIT
+  license_file: Copyright
   summary: The XSLT C library developed for the GNOME project
   description: |
     "Libxslt is the XSLT C library developed for the GNOME project.
@@ -52,7 +51,6 @@ about:
     and some of Saxon's evaluate and expressions extensions."
   doc_url: https://gitlab.gnome.org/GNOME/libxslt/-/wikis
   dev_url: https://gitlab.gnome.org/GNOME/libxslt
-  doc_source_url: https://github.com/GNOME/libxslt/tree/master/doc
 
 extra:
   recipe-maintainers:
