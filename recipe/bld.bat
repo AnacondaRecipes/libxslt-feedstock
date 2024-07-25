@@ -13,7 +13,7 @@ set "libxml2_include=%libxml2_include: -I=;%"
 set "libxml2_include=%libxml2_include:-I=;%"
 
 cd win32
-cscript configure.js prefix=%LIBRARY_PREFIX% include=%LIBRARY_INC% ^
+cscript configure.js prefix=%LIBRARY_PREFIX% include=%LIBRARY_INC%%libxml2_include% ^
         lib=%LIBRARY_LIB% sodir=%LIBRARY_BIN% iconv=yes zlib=yes vcmanifest=%MANIFEST%
 if errorlevel 1 exit 1
 
