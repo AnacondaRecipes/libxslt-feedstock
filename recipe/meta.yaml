@@ -26,7 +26,6 @@ requirements:
     - gnuconfig   # [not win]
     - pkg-config
   host:
-    - icu 73  # [not win]
     - libxml2 {{ libxml2 }}
 
 test:
