@@ -31,6 +31,7 @@ requirements:
 test:
   requires:
     - pkg-config
+    - libxml2 {{ libxml2 }}
   commands:
     - xsltproc --version
     - pkg-config --cflags libxslt libexslt
