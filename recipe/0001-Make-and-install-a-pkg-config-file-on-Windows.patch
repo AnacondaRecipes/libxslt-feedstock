@@ -3,7 +3,7 @@ From: Marcel Bargull <marcel.bargull@udo.edu>
 Date: Thu, 27 Oct 2022 11:57:38 +0200
 Subject: [PATCH] Make and install a pkg-config file on Windows
 
-Adapted from
+Adapted from 
 https://github.com/conda-forge/libxml2-feedstock/blob/a4e77d2a8486ec016cde621446ef820b5e0718e2/recipe/0002-Make-and-install-a-pkg-config-file-on-Windows.patch
 ---
  win32/Makefile.msvc | 33 ++++++++++++++++++++++++++++++++-
